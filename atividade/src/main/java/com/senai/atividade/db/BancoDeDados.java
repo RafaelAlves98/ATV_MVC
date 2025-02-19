@@ -64,9 +64,35 @@ public class BancoDeDados {
         }
         return false; // Retorna falso se o produto não foi encontrado
     }
+    public boolean update2(Cliente c) {
+        for (int i = 0; i < cliente.size(); i++) {
+            if (cliente.get(i).getIdCliente() == c.getIdCliente()) {
+                cliente.set(i, c);
+                return true;
+            }
+        } return false;
+    }
+
+    public boolean update3(Venda v) {
+        for (int i = 0; i < venda.size(); i++) {
+            if (venda.get(i).getIdVenda() == v.getIdVenda()) {
+                venda.set(i, v);
+                return true;
+            }
+        } return false;
+    }
 
     // Remove um produto pelo ID
-    public boolean delete(int id) {
-        return produtos.removeIf(p -> p.getIdProduto() == id);
+    public boolean delete(int idProduto) {
+        return produtos.removeIf(p -> p.getIdProduto() == idProduto);
     }
+
+    public boolean delete2(int idCliente) {
+        return cliente.removeIf(c -> c.getIdCliente() == idCliente);
+    }
+
+    public boolean delete3(int idVenda) {
+        return venda.removeIf(v -> v.getIdVenda() == idVenda);
+    }
+
 }
