@@ -11,7 +11,7 @@ public class ControllerVenda {
     public ControllerVenda() {
     }
 
-    public List<Venda> venda() {
+    public List<Venda> listarVenda() {
         return b.buscarVendas();
     }
 
